@@ -37,6 +37,8 @@ body{
     background:#000;
     text-align:center;
     overflow:hidden;
+    position:relative;
+    height:305px;
 
     .mb_cameratag_nav{
         width:100%;
@@ -79,6 +81,9 @@ body{
 .mb_cameratag_stage{
     width:200%;
     transition:all 0.5s ease;
+    top:0;
+    left:0;
+    position:absolute;
 
     .mb_cameratag_stage_slide{
         width:50%;
@@ -112,6 +117,7 @@ body{
     box-sizing: border-box;
     display:inline-block;
     max-width:700px;
+    height:70px;
 
     label{
         position: absolute;

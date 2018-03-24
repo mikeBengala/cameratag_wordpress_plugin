@@ -22,7 +22,7 @@
             <h2 style="text-align:center;">Submete já o teu Video Pitch</h2>
             <div class="mb_cameratag_content">
                 <p style="text-align:center;">
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean non rhoncus massa, non interdum quam. Sed tempus augue diam, non malesuada ante varius eget. Mauris mattis, mauris eget placerat aliquet, metus augue vehicula tellus, et auctor libero nunc in mi. Integer eu laoreet justo. Nam eu lectus sit amet nisl efficitur sollicitudin a malesuada nibh. Duis convallis fermentum lobortis.
+                    A submissão deste formulário consiste em dois passos. No primeiro passo agradecemos que escreva as suas informações pessoais nos campos nome e email. No segundo passo deve fazer upload do seu video usando uma das opções disponiveis.
                 </p>
             </div>
         </div>
@@ -63,7 +63,7 @@
 
                 <?php // the step ------------------------------------------->?>
                 <div class="mb_cameratag_stage_slide">
-                    <camera data-app-id='<?=$app_id?>' id='mb_cameratag_myCamera'></camera>
+                    <camera data-app-id='<?=$app_id?>' id='mb_cameratag_myCamera' data-upload-on-select='false'></camera>
 
                     <?php /*
                     <div class="mb_cameratag_nav">
