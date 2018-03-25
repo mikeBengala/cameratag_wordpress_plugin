@@ -1,4 +1,3 @@
-
 <?php
 // create custom plugin settings menu
 add_action('admin_menu', 'mb_cameratagcreate_menu');

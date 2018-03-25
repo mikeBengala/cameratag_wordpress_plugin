@@ -52,5 +52,4 @@
 
     </div>
     <?php // end the exercise form wrap --------------------------------->?>
-
 <?php }?>
