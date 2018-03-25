@@ -1,8 +1,3 @@
-// mixins ----------------------->
-
-// end mixins ------------------->
-
-
 body{
     margin:0;
 }
@@ -25,6 +20,11 @@ body{
         left: 0;
     }
 }
+.cameratag_primary_link{
+    &:hover{
+        color:#FFF !important;
+    }
+}
 .mb_videotag_description_wrap{
     float:left;
     width:100%;
@@ -38,7 +38,7 @@ body{
     text-align:center;
     overflow:hidden;
     position:relative;
-    height:305px;
+    height:300px;
 
     .mb_cameratag_nav{
         width:100%;
@@ -80,6 +80,7 @@ body{
 }
 .mb_cameratag_stage{
     width:200%;
+    height:100%;
     transition:all 0.5s ease;
     top:0;
     left:0;
@@ -87,7 +88,30 @@ body{
 
     .mb_cameratag_stage_slide{
         width:50%;
+        height:100%;
         float:left;
+        position:relative;
+    }
+    .mb_cameratag_inner_slide{
+        display:none;
+        position:absolute;
+        top:0;
+        left:0;
+        width:100%;
+        height:100%;
+    }
+}
+.cameratag_goto_start{
+    color:#eee;
+    &:hover{
+        color:#fff !important;
+    }
+}
+.cameratag_select_prompt{
+    color:#fff;
+
+    &:hover{
+        color:#fff !important;
     }
 }
 .mb_cameratag_select_prompt{
@@ -101,6 +125,10 @@ body{
    margin-bottom:2em;
    width:100%;
    float:left;
+
+   &:hover{
+       color:#FFF !important;
+   }
 }
 .mb_cameratag_form_frame{
     width:100%;
@@ -121,7 +149,7 @@ body{
 
     label{
         position: absolute;
-        top: 10px;
+        top: 12px;
         left: 0;
         color: #fff;
         font-family: "Gotham", sans-serif;
@@ -133,7 +161,7 @@ body{
     input[type="email"]{
         width:100%;
         float:left;
-        color:#fff;
+        color:#fff !important;
         background:#000;
         box-sizing: border-box;
         padding:4px 0;
@@ -163,20 +191,20 @@ body{
     box-sizing: border-box;
 
     p{
-        border-top:4px solid #fff;
-        border-bottom:4px solid #fff;
+        border-top:4px solid #fff !important;
+        border-bottom:4px solid #fff !important;
         width:100%;
-        height:30px;
+        height:46px;
         position:relative;
         margin:0;
         float:left;
         transition:all 0.35s ease;
 
         &.selected{
-            height: 50px;
-            transform:translateY(-10px);
-            -ms-transform:translateY(-10px);
-            -webkit-transform:ttranslateY(-10px);
+            height: 55px;
+            transform: translateY(-6px);
+            -ms-transform: translateY(-6px);
+            -webkit-transform: translateY(-6px);
 
             label{
                 top:-22px;

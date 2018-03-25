@@ -4,6 +4,7 @@ Mb_cameratag = {
         Mb_cameratag.set_first_step_click_validation();
         Mb_cameratag.set_input_focus_animation();
         Mb_cameratag.set_upload_after_file_select();
+        Mb_cameratag.set_sliders_width();
 
 
         if($("html").attr("lang") == "pt"){
@@ -17,6 +18,16 @@ Mb_cameratag = {
             isMobile = true;
         }
         return isMobile;
+    },
+    set_sliders_width:function(){
+        var number_of_slides = $(".mb_cameratag_stage_slide").length ,
+            stage_width_percentage = number_of_slides * 100,
+            slide_width_percentage = 100 / number_of_slides;
+
+        $(".mb_cameratag_stage").css("width", stage_width_percentage + "%");
+        $(".mb_cameratag_stage_slide").css("width", slide_width_percentage + "%");
+
+        $(".mb_cameratag_stage_slide").eq(0).find(".mb_cameratag_inner_slide").css("display", "block");
     },
     set_input_focus_animation:function(){
         $(".mb_cameratag_input_wrap p").focusin(function() {
@@ -39,11 +50,7 @@ Mb_cameratag = {
             }
 
             if (Mb_cameratag.validateEmail(user_email)) {
-                $(".mb_cameratag_stage").css({
-                    "transform": "translateX(-50%)",
-                    "-ms-transform": "translateX(-50%)",
-                    "-webkit-transform": "translateX(-50%)"
-                });
+                Mb_cameratag.slide_to(1);
                 CameraTag.cameras["mb_cameratag_myCamera"].setMetadata({
                     email: user_email,
                     name: user_name
@@ -54,6 +61,23 @@ Mb_cameratag = {
                 });
             }
         });
+    },
+    slide_to:function(slide_index){
+        var stage_width = $(".mb_cameratag_stage").width(),
+            slide_object = $(".mb_cameratag_stage_slide"),
+            slide_width = slide_object.width(),
+            px_to_slide = slide_width * slide_index,
+            percentage_to_slide = px_to_slide * 100 / stage_width;
+
+        $(".mb_cameratag_inner_slide").css("display", "none");
+        slide_object.eq(slide_index).find(".mb_cameratag_inner_slide").css("display", "block");
+
+        $(".mb_cameratag_stage").css({
+            "transform": "translateX(-" + percentage_to_slide  + "%)",
+            "-ms-transform": "translateX(-" + percentage_to_slide  + "%)",
+            "-webkit-transform": "translateX(-" + percentage_to_slide  + "%)"
+        });
+
     },
     set_observe_publish_event:function(){
         CameraTag.observe("mb_cameratag_myCamera", "published", function(obj){
